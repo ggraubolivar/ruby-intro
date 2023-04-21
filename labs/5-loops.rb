@@ -69,4 +69,17 @@ for card in hand
     puts "#{card}"
 end
 
+# 4. Fixing Replacement Issue
+
+hand = deck.sample(5)
+
+puts " "
+puts "Here's your hand (2)"
+puts "_______________"
+for card in hand   
+    puts "#{card}"
+end
+
 # EXTRA_CHALLENGE 
+
+# 1. Declare number of players, 

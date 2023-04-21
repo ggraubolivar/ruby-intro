@@ -28,5 +28,22 @@ bitcoin = gets.chomp
 # 2. The value will be a string, so you'll want to convert it to a Float.
 bitcoin = bitcoin.to_f
 
+# 2.a Ask the user in what currency they'd like their Bitcoin displayed.
+puts "What currency would you like to see your Bitcoin in?"
+currency = gets.chomp
+
 # 3. inspect the bitcoin_data hash
-# puts bitcoin_data
+rate_float = bitcoin_data["bpi"]["#{currency}"]["rate_float"]
+currency_code = bitcoin_data["bpi"]["#{currency}"]["code"]
+currency_code = currency_code.to_s
+
+value = rate_float * bitcoin
+
+ puts "1 Bitcoin is valued at #{currency_code} #{rate_float}."
+    if bitcoin == 1
+        puts "Your 1 Bitcoin is worth #{currency_code} #{value}."
+    elsif bitcoin > 1
+        puts "Your #{bitcoin} Bitcoin are worth #{currency_code} #{value}."
+    else 
+        puts "Error: Please enter a value of bitcoin as a number greater than zero!"
+    end

@@ -7,6 +7,7 @@
 # When executed, this program should print out two random
 # numbers, one on each line, simulating the roll of two
 # dice.
+
 # If the numbers add up to 7 or 11, write a message that reads
 # "YOU WIN!", if they add up to 2, 3, or 12, write a message
 # that reads "YOU LOSE!", otherwise, write a message that
@@ -19,14 +20,23 @@
 # if dinner == "tacos" || dinner == "pizza"
 # if dinner == "tacos" && dessert == "ice cream"
 
-# 1. set the first die and write it to the screen
-die1 = rand(1..6)
-puts die1
+# Declaring Variables
+d1 = rand(1..6)
+d2 = rand(1..6)
+total = d1 + d2
 
-# 2. set the second die and write it to the screen
-die2 = rand(1..6)
-puts die2
+# Printing Out Results of Roll.
+puts "Die 1: #{d1}."
+puts "Die 2: #{d2}."
+puts "Total: #{total}."
 
-# 3. create a variable for the total and write it to the screen
-total = die1 + die2
-puts "The total is: #{total}"
+# You win when the total is 7 or 11
+if total == (7 || 11)
+    puts "YOU WIN!"
+# You lose when the total is 2, 3, or 12.
+elsif total == (2 || 3 || 12)
+    puts "YOU LOSE!" 
+# You indicate the point when it the total is any other number.
+else
+    puts "THE POINT IS #{total}." 
+end
